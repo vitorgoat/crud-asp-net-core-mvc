@@ -1,0 +1,33 @@
+﻿@model TarefasModel
+@{
+    ViewData["Title"] = "Editar tarefas";
+}
+<div class="text-center">
+    <h1 class="display-3">Editar tarefa</h1>
+    <br />
+</div>
+<form method="post" asp-controller="Tarefas" asp-action="Salvar">
+    <input type="hidden" name="Id" value="@ViewBag.TarefaEdit.Id" />
+    <div class="form-group">
+        <label for="titulo">Título</label>
+        <input class="form-control" name="Titulo" aria-describedby="emailHelp" placeholder="Insira o título da tarefa" value="@ViewBag.TarefaEdit.Titulo">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input class="form-control" name="Descricao" placeholder="" value="@ViewBag.TarefaEdit.Descricao">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-select" name="Status">
+            <option selected>Selecione o status</option>
+            <option>Aberto</option>
+            <option>Em andamento</option>
+            <option>Concluído</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a class="btn btn-dark" asp-controller="Tarefas" asp-action="Index">Retornar ao menu</a>
+</form>

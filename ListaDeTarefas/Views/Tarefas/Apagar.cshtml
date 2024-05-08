@@ -1,0 +1,31 @@
+﻿@model TarefasModel
+@{
+    ViewData["Title"] = "Apagar Tarefa";
+}
+<div style="text-align: center;">
+<h2>Confirmação de exclusão</h2>
+<br />
+    <h5><p>Você deseja realmente excluir a tarefa:</p></h5>
+<div class="card">
+    
+    <p><b>ID:</b>@Model.Id</p>
+    <p><b>Título:</b>@Model.Titulo</p>
+    <p><b>Descrição:</b>@Model.Descricao</p>
+    <p><b>Status:</b>@Model.Status</p>
+</div>
+<br />
+<div style="display: flex; justify-content-center">
+    <div style="margin-right: 10px;">
+        <form method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="btn btn-dark" formaction="@Url.Action("Index", "Tarefas")">Cancelar exclusão</button>
+        </form>
+    </div>
+    <div>
+        <form method="post" action="@Url.Action("ConfirmarApagar", "Tarefas")">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="btn btn-danger">Confirmar exclusão</button>
+        </form>
+    </div>
+</div>
+</div>

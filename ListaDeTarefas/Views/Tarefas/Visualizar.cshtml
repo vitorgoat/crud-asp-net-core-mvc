@@ -1,0 +1,13 @@
+﻿@model TarefasModel
+@{
+    ViewData["Title"] = "Visualizar Tarefa";
+}
+<div class="card" style="text-align: center;">
+<p><b>ID:<b> @Model.Id</b></p>
+<p><b>Titulo:</b> @Model.Titulo</p>
+<p><b>Descrição:</b> @Model.Descricao</p>
+<p><b>Status:</b> @Model.Status</p>
+<br />
+</div>
+<br />
+<a href="@Url.Action("Index", "Tarefas")" class="btn btn-dark">Voltar</a>

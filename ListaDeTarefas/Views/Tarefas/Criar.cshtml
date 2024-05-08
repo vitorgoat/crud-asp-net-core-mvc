@@ -1,0 +1,36 @@
+﻿@model TarefasModel
+@{
+    ViewData["Title"] = "Criar tarefas";
+}
+<div class="text-center">
+
+    <h1 class="display-3">Cadastrar nova tarefa</h1>
+
+    <br />
+</div>
+<form  asp-action="Criar">
+    <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input class="form-control" placeholder="Insira o título da tarefa" id="titulo" name="Titulo" />
+        
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="descrição">Descrição</label>
+        <input class="form-control" placeholder="Descreva a tarefa" type="text" id="descricao" name="Descricao" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-select" id="status" name="Status">
+            <option selected>Selecione o satus</option>
+            <option value="Aberto">Aberto</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Concluido">Concluido</option>
+        </select>
+    </div>
+
+    <br />
+<button type="submit" class="btn btn-primary">Cadastrar</button>
+<a class="btn btn-dark" asp-controller="Tarefas" asp-action="Index">Retornar ao menu</a>
+</form>
